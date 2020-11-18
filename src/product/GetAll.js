@@ -1,6 +1,5 @@
 import React from 'react'
 import axios from 'axios'
-
 import UpMenu from "./UpMenu"
 import Product from "./Card"
 import '../App.css'
@@ -14,7 +13,7 @@ class GetAllProducts extends React.Component{
         }
     }
     componentDidMount(){
-        axios.get('http://localhost:8080/v1/product').then(res => {
+        axios.get(`${process.env.REACT_APP_SERVER}/v1/product`).then(res => {
             if(res && res.data && res.status === 200 && res.data.data){
                 this.setState({
                     products: res.data.data

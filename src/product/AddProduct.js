@@ -60,7 +60,7 @@ class AddProduct extends React.Component{
         product.append('price',this.state.price)
         product.append('stock',this.state.stock)
         product.append('image',this.state.image)
-        axios.post('http://localhost:8080/v1/product',product).then((res)=>{
+        axios.post(`${process.env.REACT_APP_SERVER}/v1/product`,product).then((res)=>{
             if(res && res.status === 201){
                 this.setState({
                     ...this.state.message,

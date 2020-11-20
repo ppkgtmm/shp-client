@@ -66,22 +66,10 @@ class GetByCategory extends React.Component{
     }
 
     render(){
-        const dropdown = [{
-            title: "Category",
-            content: [
-                {link: "/", text: "All"},
-                {link: "/Skin care", text:"Skin care"},
-                {link: "/Make up", text: "Make up"}
-            ],
-            current: this.props.category ? this.props.category : "All"
-        }]
-        const buttons = [{
-            name: "login"
-        }]
         return (
             <div className="wrapper container mt-3">
-                <UpMenu dropdown={dropdown} buttons={buttons}/>
-                <div className="products is-flex-touch">
+                <UpMenu category={this.props.category ? this.props.category : "All"} />
+                <div className="products">
                     {this.state.products.map((product, index) => {
                         return <Product key={index} id={product._id} name={product.name} image={product.image}/>
                     })}

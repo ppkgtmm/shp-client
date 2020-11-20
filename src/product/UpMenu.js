@@ -3,7 +3,19 @@ import '../App.css'
 
 import Dropdown from "./Dropdown"
 import Search from "./Search"
-const upMenu = ({dropdown, buttons}) => {
+const UpMenu = (props) => {
+    const dropdown = [{
+        title: "Category",
+        content: [
+            {link: "/", text: "All"},
+            {link: "/Skin care", text:"Skin care"},
+            {link: "/Make up", text: "Make up"}
+        ],
+        current: props.category ? props.category : "All"
+    }]
+    const buttons = [{
+        name: "Login"
+    }]
     return (
         <div className="up-menu">
             <Search />
@@ -19,4 +31,4 @@ const upMenu = ({dropdown, buttons}) => {
     )
 }
 
-export default upMenu
+export default UpMenu

@@ -150,7 +150,7 @@ class AddProduct extends React.Component{
     }
     render(){
         return (
-                <div className="container">
+                <div className="container" style={{overflowX:"hidden"}}>
                     <div className="columns">
                         <div className="form">
                             <div className="box m-5 p-6">

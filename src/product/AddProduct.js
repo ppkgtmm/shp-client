@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import CodeGenerator from '../utils/JSXGenerator'
 import '../App.css'
 import '../index.css'
 
@@ -24,33 +25,8 @@ class AddProduct extends React.Component{
         this.onPriceChange = this.onPriceChange.bind(this)
         this.onStockChange = this.onStockChange.bind(this)
         this.onFileChange = this.onFileChange.bind(this)
-        this.getInputJSX = this.getInputJSX.bind(this)
     }
 
-    getInputJSX = (rules) => {
-        if(rules.type === 'number'){
-            return (
-                <div className="field">
-                    <div className="control">
-                        <p>{rules.label}:</p>
-                        <input className="input is-small" type="number" name={`${rules.name}`} min={`${rules.min}`} step={`${rules.step}`} required onChange={rules.func}/>
-                    </div>
-                    <p className="has-text-danger">{this.state.errors[rules.name]}</p>
-                </div>
-            )
-        }
-        else if(rules.type === 'text'){
-            return (
-                <div className="field">
-                    <div className="control">
-                        <p>{rules.label}:</p>
-                        <input className="input is-small" type="text" name={`${rules.name}`} required  onChange={rules.func} />
-                    </div>
-                    <p className="has-text-danger">{this.state.errors[rules.name]}</p>
-               </div>
-            )
-        }
-    }
     onSubmit = (e) => {
         e.preventDefault()
         let product = new FormData();
@@ -74,19 +50,21 @@ class AddProduct extends React.Component{
         }).catch(err => {
             console.log(err)
             if(err.response && err.response.status === 400 && err.response.data && err.response.data.error){
-                let {name, category, brand, price, stock, image} = err.response.data.error
-                name = name ? `name ${name}` : ""
-                category = category ? `category ${category}` : ""
-                brand = brand ? `brand ${brand}` : ""
-                price = price ? `price ${price}` : ""
-                stock = stock ? `stock ${stock}` : ""
-                image = image ? `image ${image}` : ""
-                this.setState({
-                    errors: {
-                        name, category, brand, price, stock, image
-                    },
-                    message: { ...this.state.message, success: "" }
-                })
+                if(typeof err.response.data.error === "object"){
+                    let {name, category, brand, price, stock, image} = err.response.data.error
+                    name = name ? `name ${name}` : ""
+                    category = category ? `category ${category}` : ""
+                    brand = brand ? `brand ${brand}` : ""
+                    price = price ? `price ${price}` : ""
+                    stock = stock ? `stock ${stock}` : ""
+                    image = image ? `image ${image}` : ""
+                    this.setState({
+                        errors: {
+                            name, category, brand, price, stock, image
+                        },
+                        message: { ...this.state.message, success: "" }
+                    })
+                }
 
             }
             else{
@@ -155,11 +133,13 @@ class AddProduct extends React.Component{
                         <div className="form">
                             <div className="box m-5 p-6">
                                 <form method="post" onSubmit={this.onSubmit}>
-
-                                {this.getInputJSX({ type: 'text', label: 'Product name', name: 'name',
-                                    func: this.onNameChange
-                                })}
-                                    <div className="field">
+                                    <div className="field py-1">
+                                        <CodeGenerator rules={{ type: 'text', label: 'Product name', name: 'name',
+                                            func: this.onNameChange
+                                        }} />
+                                        <p className="has-text-danger">{this.state.errors.name}</p>
+                                    </div>
+                                    <div className="field py-1">
                                         <div className="control">
                                             <p>Category:</p>
                                             <div className="select is-small" style={{display:"block"}}>
@@ -176,20 +156,28 @@ class AddProduct extends React.Component{
                                         </div>
                                         <p className="has-text-danger">{this.state.errors.category}</p>
                                     </div>
+                                    <div className="field py-1">
+                                        <CodeGenerator rules={{ type: 'text', label: 'Brand', name: 'brand',
+                                            func: this.onBrandChange
+                                        }} />
+                                        <p className="has-text-danger">{this.state.errors.brand}</p>
+                                    </div>
 
-                                    {this.getInputJSX({ type: 'text', label: 'Brand', name: 'brand',
-                                    func: this.onBrandChange
-                                    })}
+                                    <div className="field py-1">
+                                        <CodeGenerator rules={{ type: 'number', label: 'Price', name: 'price',
+                                            min: 0, step: 0.01, func: this.onPriceChange
+                                        }}/>
+                                        <p className="has-text-danger">{this.state.errors.price}</p>
 
-                                    {this.getInputJSX({ type: 'number', label: 'Price', name: 'price',
-                                        min: 0, step: 0.01, func: this.onPriceChange
-                                    })}
+                                    </div> 
+                                    <div className="field py-1">
+                                        <CodeGenerator rules={{ type: 'number', label: 'Stock', name: 'stock',
+                                            min: 0, step: 1, func: this.onStockChange
+                                        }}/>
+                                        <p className="has-text-danger">{this.state.errors.stock}</p>
+                                    </div>
 
-                                    {this.getInputJSX({ type: 'number', label: 'Stock', name: 'stock',
-                                        min: 0, step: 1, func: this.onStockChange
-                                    })}
-
-                                    <div className="field">
+                                    <div className="field py-1">
                                         <div className="control">
                                             <p>Picture:</p>
                                             <div className="file has-name is-small is-right is-fullwidth">
@@ -210,7 +198,9 @@ class AddProduct extends React.Component{
                                     </div>
                                     <p className="has-text-success respond">{this.state.message.success}</p>
                                     <p className="has-text-danger respond">{this.state.message.error}</p>
-                                    <input type="submit" name="submit" value="Upload" className="button is-primary btn"/>
+                                    <div className="field">
+                                        <input type="submit" name="submit" value="Upload" className="button is-primary btn is-fullwidth"/>
+                                    </div>
                                 </form>
                             </div>
                         </div>

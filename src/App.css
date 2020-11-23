@@ -24,6 +24,7 @@ p, .box a, option{
 .respond{
 	margin-bottom: .2em;
 	margin-top: .2em;
+	font-size: .75rem !important;
 }
 
 .box{
@@ -44,11 +45,6 @@ html{
 	margin-inline-end: .5em !important;
 }
 
-.products{
-	display: flex !important;
-	flex-wrap: wrap;
-	justify-content: left !important;
-}
 
 .up-menu{
 	display: block;
@@ -108,11 +104,11 @@ html{
 .value{
 	margin: 0 !important;
 }
+
+.wrapper{
+	width: 98.5% !important;
+}
 @media screen and (max-width: 600px){
-	.products .box{
-		margin-left: auto !important;
-		margin-right: auto !important;
-	}
 	.card-content.box, .image{
 		display: block;
 		margin-left: auto !important;
@@ -131,10 +127,6 @@ html{
 	}
 }
 @media screen and (min-width: 601px){
-	.products, .wrapper, .product-card{
-		margin-left: auto !important;
-		margin-right: auto !important;
-	}
 	.info p{
 		font-size: 0.8em !important;
 	}
@@ -160,11 +152,12 @@ html{
 	}
 }
 @media screen and (max-width: 350px){
-	.form {
+	.form, .search .box {
 		width: 100% !important;
 	}
-	.search, .search .box{
-		width: 99% !important;
+
+	.wrapper{
+		width: 98.5% !important;
 	}
 
 	.button-group{
@@ -174,23 +167,18 @@ html{
 	.wrapper{
 		width: 100% !important;
 	}
-	.up-menu, .search, .product-card{
+	.up-menu, .search, .product-card, .button-group, .wrapper{
 		margin-left: auto !important;
 		margin-right: auto !important;
 	}
 	.image, .card-content.box{
 		width: 67.5% !important;
 	}
-	.up-menu .btn, .dropdown .button{
-		margin-inline-start: .15em !important;
-	}
+
 }
 @media screen and (min-width: 350px) and (max-width: 400px){
 	.form {
 		width: 100% !important;
-	}
-	.wrapper{
-		width: 95% !important;
 	}
 	.image{
 		width: 60.5% !important;
@@ -214,10 +202,7 @@ html{
 }
 @media screen and (min-width: 501px) and (max-width: 600px){
 	.form {
-		width: 80% !important;
-	}
-	.wrapper{
-		width: 90% !important;
+		width: 75% !important;
 	}
 	.image{
 		width: 50% !important;
@@ -234,12 +219,9 @@ html{
 }
 @media screen and (min-width: 601px) and (max-width: 700px){
 	.form{
-		width: 70% !important;
+		width: 65% !important;
 		margin-left: auto;
 		margin-right: auto;
-	}
-	.wrapper{
-		width: 100% !important;
 	}
 	.product-card{
 		width: 97.5%;
@@ -248,10 +230,7 @@ html{
 }
 @media screen and (min-width: 701px) and (max-width: 800px){
 	.form {
-		width: 65% !important;
-	}
-	.wrapper{
-		width: 90% !important;
+		width: 59% !important;
 	}
 	.product-card{
 		width: 97.5%;
@@ -261,10 +240,10 @@ html{
 }
 @media screen and (min-width: 801px) and (max-width: 900px){
 	.form {
-		width: 59% !important;
+		width: 50% !important;
 	}
-	.products, .up-menu,.product-card{
-		width: 87.5% !important;
+	.products, .up-menu, .product-card{
+		width: 100% !important;
 	}
 	.up-menu{
 		margin-left: auto !important;
@@ -275,20 +254,25 @@ html{
 }
 @media screen and (min-width: 901px) {
 	.form {
-		width: 50% !important;
+		width: 45% !important;
 	}
-	.products, .up-menu, .product-card{
-		width: 95% !important;
+	.products, .up-menu{
+		width: 100% !important;
+	}
+	.product-card{
+		width: 80% !important;
+		margin-left: auto !important;
+		margin-right: auto !important;
 	}
 	.up-menu{
 		margin: auto !important;
 	}
 	.image{
-		width: 25% !important;
-		height: 25% !important;
+		width: 30% !important;
+		height: 30% !important;
 	}
 	.card-content.box{
-		width: 65% !important;
+		width: 55% !important;
 	}
 
 }
@@ -315,16 +299,16 @@ html{
 }
 
 ::-webkit-input-placeholder{
-	color: rgb(83, 80, 80) !important;
-	font-size: .85em !important;
+	color: rgb(126, 126, 126) !important;
+	font-size: .9em !important;
 }
 :-ms-input-placeholder{
-	color: rgb(83, 80, 80) !important;
-	font-size: .85em !important;
+	color:  rgb(126, 126, 126) !important;
+	font-size: .9em !important;
 }
 ::placeholder {
-	color: rgb(83, 80, 80) !important;
-	font-size: .85em !important;
+	color:  rgb(126, 126, 126) !important;
+	font-size: .9em !important;
 }
 
 .dropdown button{
@@ -413,4 +397,26 @@ html{
 
 .content p{
 	margin-bottom: .5em !important;
+}
+
+.products{
+	display: grid !important;
+	grid-template-columns: repeat(auto-fit, minmax(285px, max-content)) !important;
+	padding: initial;
+	justify-content: center !important;
+}
+
+.user{
+	font-size: .785rem !important;
+}
+
+.notification{
+	width: 50% !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	position: absolute !important;
+	top: 50% !important;
+	left: 50% !important;
+	transform: translate(-50%,-50%) !important;
+	z-index: 333;
 }

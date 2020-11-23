@@ -1,11 +1,10 @@
-import React, {useState} from 'react'
+import React from 'react'
 import '../App.css'
 const Dropdown = ({title, content, current}) => {
-    const [active, setActive] = useState(false)
     return (
-        <div className={`dropdown${active? ' is-active': ''}`}>
+        <div className={`dropdown is-hoverable`}>
         <div className="dropdown-trigger">
-            <button className="button is-small has-text-dark  btn" aria-haspopup="true" aria-controls="dropdown-menu" onClick={(e) => setActive(!active)}>
+            <button className="button is-small has-text-dark  btn" aria-haspopup="true" aria-controls="dropdown-menu">
                 <span>{title}</span>
                 <span className="icon is-small">
                 <i className="fas fa-angle-down" aria-hidden="true"></i>

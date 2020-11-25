@@ -153,7 +153,7 @@ class Signup extends React.Component{
                                 <CodeGenerator rules={{ type: 'password', label: 'Re-enter password', name: 'password',
                                     func: this.onPasswordConfirm
                                 }} />
-                                <p className="has-text-danger respond">{this.state.password === this.state.confirmed ? "" : "check password before confirming"}</p>
+                                <p className="has-text-danger respond">{this.state.confirmed === "" || this.state.password === this.state.confirmed ? "" : "password must match"}</p>
                             </div>
                             <p className="has-text-danger respond">{this.state.error}</p>
                             <div className="field pt-1">

@@ -2,6 +2,7 @@ import React from 'react'
 
 
 const InputGenerator = ({rules}) => {
+    const textInputType = ['password', 'email', 'text']
     if(rules.type === 'number'){
         return (
             <div className="control">
@@ -11,27 +12,11 @@ const InputGenerator = ({rules}) => {
             </div>
         )
     }
-    else if(rules.type === 'text'){
+    else if(textInputType.includes(rules.type)){
         return (
             <div className="control">
                 <p>{rules.label}:</p>
-                <input className="input is-small" type="text" name={`${rules.name}`} required  onChange={rules.func} />
-            </div>
-        )
-    }
-    else if(rules.type === 'password'){
-        return (
-            <div className="control">
-                <p>{rules.label}:</p>
-                <input className="input is-small" type="password" name={`${rules.name}`} required  onChange={rules.func} />
-            </div>
-        )
-    }
-    else if(rules.type === 'email'){
-        return (
-            <div className="control">
-                <p>{rules.label}:</p>
-                <input className="input is-small" type="email" name={`${rules.name}`} required  onChange={rules.func} />
+                <input className="input is-small" type={`${rules.type}`} name={`${rules.name}`} required  onChange={rules.func} />
             </div>
         )
     }

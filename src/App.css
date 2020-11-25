@@ -33,7 +33,7 @@ p, .box a, option{
 }
 html{
 	background: #ffa495;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to left, #ffd0c8,#ff8585) no-repeat fixed;
+	background-image: -webkit-linear-gradient(to left, #ffd0c8,#ff8585) no-repeat fixed;
 	background: linear-gradient(to left, #ffd0c8,#ff8585) no-repeat fixed;
 	background-size: cover !important;
 }

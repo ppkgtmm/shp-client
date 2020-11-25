@@ -2,7 +2,7 @@ import React from 'react'
 import {Route, Switch} from 'react-router-dom'
 
 import AddProduct from '../product/AddProduct'
-import GetAllProducts from '../product/GetAll'
+import GetAllProducts from '../product/GetAllProducts'
 import GetMakeUp from '../product/GetMakeUp'
 import GetSkinCare from '../product/GetSkinCare'
 import ProductInfo from '../product/ProductInfo'

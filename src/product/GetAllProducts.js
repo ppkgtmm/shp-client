@@ -3,10 +3,10 @@ import '../App.css'
 
 import GetAll from './GetByCategory'
 
-const getAllProducts = () => {
+const GetAllProducts = () => {
     return (
         <GetAll />
     )
 }
 
-export default getAllProducts
+export default GetAllProducts

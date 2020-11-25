@@ -1,8 +1,7 @@
 import React from 'react'
 import axios from 'axios'
-import CodeGenerator from '../utils/JSXGenerator'
+import CodeGenerator from '../utils/InputGenerator'
 import '../App.css'
-import '../index.css'
 
 class AddProduct extends React.Component{
     constructor(props){

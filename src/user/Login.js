@@ -1,5 +1,5 @@
 import React from 'react'
-import CodeGenerator from '../utils/JSXGenerator'
+import CodeGenerator from '../utils/InputGenerator'
 import axios from 'axios'
 import '../App.css'
 

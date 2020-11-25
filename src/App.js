@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {BrowserRouter} from 'react-router-dom'
 
-import Routes from './route/Routes'
+import Routes from './route/Main'
 import './App.sass'
 
 class App extends Component {

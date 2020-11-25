@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import CodeGenerator from '../utils/JSXGenerator'
+import CodeGenerator from '../utils/InputGenerator'
 import '../App.css'
 
 class Signup extends React.Component{

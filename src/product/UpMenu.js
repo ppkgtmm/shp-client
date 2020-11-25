@@ -2,7 +2,7 @@ import React from 'react'
 import '../App.css'
 
 import Dropdown from "./Dropdown"
-import Search from "./Search"
+import Search from "./SearchBar"
 const UpMenu = (props) => {
     const dropdown = [{
         title: "Category",

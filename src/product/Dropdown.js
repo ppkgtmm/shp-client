@@ -1,11 +1,11 @@
 import React from 'react'
 import '../App.css'
-const Dropdown = ({title, content, current}) => {
+const Dropdown = ({content, current}) => {
     return (
         <div className={`dropdown is-hoverable`}>
         <div className="dropdown-trigger">
-            <button className="button is-small has-text-dark  btn" aria-haspopup="true" aria-controls="dropdown-menu">
-                <span>{title}</span>
+            <button className="button is-small has-text-dark trigger" aria-haspopup="true" aria-controls="dropdown-menu">
+                <span>{current}</span>
                 <span className="icon is-small">
                 <i className="fas fa-angle-down" aria-hidden="true"></i>
                 </span>

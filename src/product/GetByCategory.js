@@ -67,7 +67,7 @@ class GetByCategory extends React.Component{
 
     render(){
         return (
-            <div className="wrapper container mt-3">
+            <div className="wrapper container">
                 <UpMenu category={this.props.category ? this.props.category : "All"} />
                 <div className="products">
                     {this.state.products.map((product, index) => {

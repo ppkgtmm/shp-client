@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+
+import Category from './Category'
 import '../App.css'
 
 function onSubmit(e,keyword) {
@@ -16,13 +18,14 @@ const SearchBar = (props) => {
     return (
         <div className="search">
             <form method="post" onSubmit={(e) => onSubmit(e, keyword)}>
-                <div className="control is-small box">
+                <div className="control is-small search-box">
                     <input className="input" type="text" placeholder="Type to search" onChange={ e => setKeyword(onChange(e)) }/>
                 </div>
-                <div className="control">
-                    <input type="submit" name="submit" value="Search" className="button is-inline-block is-primary is-inverted btn"/>
+                <div className="control search-btn">
+                    <input type="submit" name="submit" value="Search" className="button is-inline-block is-primary btn"/>
                 </div>
             </form>
+            <Category />
         </div>
     )
 }

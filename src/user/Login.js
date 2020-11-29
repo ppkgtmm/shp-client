@@ -78,7 +78,7 @@ class Login extends React.Component{
     }
     render(){
         return (
-            <div className="container py-6" style={{overflowX:"hidden"}}>
+            <div className="container py-5" style={{overflowX:"hidden"}}>
             <div className="columns">
                 <div className="form">
                     <div className="box m-5 p-6">

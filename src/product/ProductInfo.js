@@ -77,11 +77,11 @@ class ProductInfo extends React.Component{
                     <div className="card-content box">
                         <div className="content">
                             <div className="info">
-                                <p className="field">{this.state.product.name}</p>
-                                <p>{this.state.product.brand} </p>
-                                <Tag text={this.state.product.category}/>
-                                <Tag text={`${this.state.product.stock} left`} />
-                                <p className="price">{`${this.state.product.price} Baht`}</p>
+                                <p className="field">{this.state.product.name || ""}</p>
+                                <p>{this.state.product.brand || ""} </p>
+                                <Tag text={this.state.product.category || ""}/>
+                                <Tag text={`${this.state.product.stock || ""} left`} />
+                                <p className="price">{`${this.state.product.price || ""} Baht`}</p>
                             </div>
                         </div>
                         <div>

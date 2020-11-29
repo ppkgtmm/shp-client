@@ -154,17 +154,28 @@ html{
 		margin-right: auto !important;
 	}
 	.search form{
+		display: -ms-grid !important;
 		display: grid !important;
+		-ms-grid-columns: 4fr .7rem 1fr !important;
 		grid-template-columns: 4fr 1fr !important;
 		grid-template-areas: "search-box search-btn" !important;
+		-webkit-column-gap: .7rem !important;
+		-moz-column-gap: .7rem !important;
 		column-gap: .7rem !important;
 	}
 	.button-group{
+		display: -ms-grid !important;
 		display: grid !important;
+		-ms-grid-columns: 2fr .7rem 3fr  !important;
 		grid-template-columns: 2fr 3fr  !important;
 		grid-template-areas: "dropdown ." !important;
+		-webkit-box-align: center !important;
+		-ms-flex-align: center !important;
 		align-items: center !important;
+		-webkit-column-gap: .7rem !important;
+		-moz-column-gap: .7rem !important;
 		column-gap: .7rem !important;
+		-webkit-margin-before: .35rem !important;
 		margin-block-start: .35rem !important;
 	}
 
@@ -192,19 +203,30 @@ html{
 		justify-content: center;
 	}
 	.search form{
+		display: -ms-grid !important;
 		display: grid !important;
+		-ms-grid-columns: 5fr .7rem 1fr !important;
 		grid-template-columns: 5fr 1fr !important;
 		grid-template-areas: "search-box search-btn" !important;
+		-webkit-column-gap: .7rem !important;
+		-moz-column-gap: .7rem !important;
 		column-gap: .7rem !important;
 	}
 	.search{
+		display: -ms-grid !important;
 		display: grid !important;
+		-ms-grid-columns: 1fr .7rem 2fr .7rem 1fr .7rem 4fr .7rem 1fr .7rem 1fr !important;
 		grid-template-columns: 1fr 2fr 1fr 4fr 1fr 1fr !important;
+		-ms-grid-rows: auto !important;
 		grid-template-rows: auto !important;
 		grid-template-areas: 
 		". form form form form  ."
 		". dropdown . . . ." !important;
+		-webkit-box-align: center !important;
+		-ms-flex-align: center !important;
 		align-items: center !important;
+		-webkit-column-gap: .7rem !important;
+		-moz-column-gap: .7rem !important;
 		column-gap: .7rem !important;
 	}
 	.up-menu{
@@ -278,16 +300,26 @@ html{
 		margin-top: .5em;
 	}
 	.button-group{
+		display: -ms-grid !important;
 		display: grid !important;
+		-ms-grid-columns: 2fr .7rem 4fr  !important;
 		grid-template-columns: 2fr 4fr  !important;
 		grid-template-areas: "dropdown ." !important;
+		-webkit-box-align: center !important;
+		-ms-flex-align: center !important;
 		align-items: center !important;
+		-webkit-column-gap: .7rem !important;
+		-moz-column-gap: .7rem !important;
 		column-gap: .7rem !important;
 	}
 	.search form{
+		display: -ms-grid !important;
 		display: grid !important;
+		-ms-grid-columns: 5fr .7rem 1fr !important;
 		grid-template-columns: 5fr 1fr !important;
 		grid-template-areas: "search-box search-btn" !important;
+		-webkit-column-gap: .7rem !important;
+		-moz-column-gap: .7rem !important;
 		column-gap: .7rem !important;
 	}
 }
@@ -302,13 +334,20 @@ html{
 	}
 
 	.search{
+		display: -ms-grid !important;
 		display: grid !important;
+		-ms-grid-columns: 1fr .7rem 3fr .7rem 1fr .7rem 4fr .7rem 1fr .7rem 1fr !important;
 		grid-template-columns: 1fr 3fr 1fr 4fr 1fr 1fr !important;
+		-ms-grid-rows: auto !important;
 		grid-template-rows: auto !important;
 		grid-template-areas: 
 		". form form form form  ."
 		". dropdown . . . ." !important;
+		-webkit-box-align: center !important;
+		-ms-flex-align: center !important;
 		align-items: center !important;
+		-webkit-column-gap: .7rem !important;
+		-moz-column-gap: .7rem !important;
 		column-gap: .7rem !important;
 	}
 	
@@ -331,13 +370,20 @@ html{
 	}
 
 	.search{
+		display: -ms-grid !important;
 		display: grid !important;
+		-ms-grid-columns: 1fr .7rem 2fr .7rem 1fr .7rem 1fr .7rem 4fr .7rem 1fr .7rem 1fr !important;
 		grid-template-columns: 1fr 2fr 1fr 1fr 4fr 1fr 1fr !important;
+		-ms-grid-rows: auto !important;
 		grid-template-rows: auto !important;
 		grid-template-areas: 
 		". form form form form form  ."
 		". dropdown . . . . ." !important;
+		-webkit-box-align: center !important;
+		-ms-flex-align: center !important;
 		align-items: center !important;
+		-webkit-column-gap: .7rem !important;
+		-moz-column-gap: .7rem !important;
 		column-gap: .7rem !important;
 	}
 	

@@ -1,15 +1,20 @@
 import React from 'react'
 import More from './More'
+import Search from './Search'
+import Category from './Category'
+
 import '../App.css'
 
-import Search from "./SearchBar"
 
-const UpMenu = (props) => {
+const UpMenu = ({category, isLoggedIn}) => {
     return (
         <div className="menu">
-            <More isLoggedIn={props.isLoggedIn}/>
+            <More isLoggedIn={isLoggedIn}/>
             <div className="up-menu">
-            <Search />
+                <div className="search">
+                    <Search />
+                    <Category category={category}/>
+                </div> 
             </div>
         </div>
     )
